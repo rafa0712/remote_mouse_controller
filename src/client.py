@@ -1,7 +1,9 @@
 from pynput.mouse import Listener
 import pyautogui
 import socket
+address = ('192.168.15.2', 6081)
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.sendto('OI servidor', address)
 
 
 def on_move(x, y):
