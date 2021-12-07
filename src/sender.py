@@ -1,14 +1,16 @@
 from pynput.mouse import Listener
 import pyautogui
-import socket
+import json
+import SenderSocket.Socket as Socket
 address = ('192.168.15.2', 6081)
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.sendto('[+] First message...'.encode(), address)
+s = Socket(address)
+
+
 
 
 def on_move(x, y):
-    print('Pointer moved to {}'.format(
-        (x, y)))
+    s.send(json.dumps({'x':x, 'y':y}))
+    
 
 def on_click(x, y, button, pressed):
     print('{0} at {1}'.format(
