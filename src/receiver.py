@@ -1,4 +1,4 @@
-import ReceiverSocket as Socket
+from ReceiverSocket import *
 print('Listening ...')
 s = Socket(('', 6081))
 while True:

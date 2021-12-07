@@ -1,7 +1,7 @@
 from pynput.mouse import Listener
 import pyautogui
 import json
-import SenderSocket.Socket as Socket
+from SenderSocket import *
 address = ('192.168.15.2', 6081)
 s = Socket(address)
 
