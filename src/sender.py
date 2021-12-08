@@ -1,4 +1,4 @@
-from pynput.mouse import Listener
+from pynput.mouse import Listener, Button
 import json
 from SenderSocket import *
 address = ('192.168.15.2', 6081)
@@ -11,8 +11,8 @@ def on_move(x, y):
     s.send(json.dumps({'type':'move', 'x':x, 'y':y}))
 
 def on_click(x, y, button, pressed):
-    
-    print(button)
+
+    print(button == Button.left)
     if pressed:
         s.send(json.dumps({'type':'press'}))
     else:
