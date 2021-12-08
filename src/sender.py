@@ -1,7 +1,7 @@
 from pynput.mouse import Listener, Button
 import json
 from SenderSocket import *
-address = ('192.168.15.2', 6081)
+address = ('192.168.15.21', 6081)
 s = Socket(address)
 
 

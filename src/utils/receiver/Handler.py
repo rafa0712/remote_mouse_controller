@@ -5,11 +5,15 @@ def move(command):
     mouse.move(command['x'], command['y'])
 
 def press(command):
+    possibles = {
+        'left':Button.left,
+        'right':Button.right,
+    }
+    print(command)
     side = command.get('side')
-    if side == 'left':
+    chosen = possibles.get(side)
+    if (chosen):
         mouseC.press(Button.left)
-    else:
-        mouseC.press(Button.right)
 
 def release(command):
     side = command.get('side')
