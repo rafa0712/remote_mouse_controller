@@ -8,12 +8,13 @@ def press(command):
     possibles = {
         'left':Button.left,
         'right':Button.right,
+        'button8':Button.button8,
+        'button9':Button.button9
     }
-    print(command)
     side = command.get('side')
     chosen = possibles.get(side)
     if (chosen):
-        mouseC.press(Button.left)
+        mouseC.press(chosen)
 
 def release(command):
     side = command.get('side')
@@ -24,7 +25,8 @@ def release(command):
 
 def scroll(command):
     dy = command.get('dy')
-    mouseC.scroll(0, dy)
+    dx = command.get('dx')
+    mouseC.scroll(dx or 0, dy or 0)
 
 options = {
     "move":move,
