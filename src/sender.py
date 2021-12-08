@@ -11,12 +11,12 @@ def on_move(x, y):
     s.send(json.dumps({'type':'move', 'x':x, 'y':y}))
 
 def on_click(x, y, button, pressed):
-
-    print(button == Button.left)
+    button = button._name_
+    
     if pressed:
-        s.send(json.dumps({'type':'press'}))
+        s.send(json.dumps({'type':'press', 'side':button}))
     else:
-        s.send(json.dumps({'type':'hold'}))
+        s.send(json.dumps({'type':'release', 'side':button}))
 
 def on_scroll(x, y, dx, dy):
     print('Scrolled {0}'.format(
