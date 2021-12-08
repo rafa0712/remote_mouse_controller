@@ -11,6 +11,7 @@ def on_move(x, y):
     s.send(json.dumps({'type':'move', 'x':x, 'y':y}))
 
 def on_click(x, y, button, pressed):
+    
     print(button)
     if pressed:
         s.send(json.dumps({'type':'press'}))
