@@ -8,6 +8,8 @@ def press(command):
     possibles = {
         'left':Button.left,
         'right':Button.right,
+        'button8':Button.button8,
+        'button9':Button.button9
     }
     print(command)
     side = command.get('side')
