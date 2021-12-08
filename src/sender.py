@@ -19,8 +19,7 @@ def on_click(x, y, button, pressed):
         s.send(json.dumps({'type':'release', 'side':button}))
 
 def on_scroll(x, y, dx, dy):
-    print('Scrolled {0}'.format(
-        (x, y)))
+    s.send(json.dumps({'type':'scroll', 'dx':dx, 'dy':dy }))
 
 with Listener(
     on_move=on_move,
